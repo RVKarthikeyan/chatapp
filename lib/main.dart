@@ -1,4 +1,4 @@
-import 'package:chatapp/auth/auth_gate.dart';
+import 'package:chatapp/services/auth/auth_gate.dart';
 import 'package:chatapp/firebase_options.dart';
 import 'package:chatapp/themes/light_mode.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: AuthGate(),
+      home: const AuthGate(),
       debugShowCheckedModeBanner: false,
       theme: lightMode,
     );
