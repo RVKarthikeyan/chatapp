@@ -18,6 +18,9 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Home"),
+        backgroundColor: Colors.transparent,
+        foregroundColor: Colors.grey,
+        elevation: 0,
         centerTitle: true,
       ),
       drawer: const MyDrawer(),
@@ -32,11 +35,11 @@ class HomePage extends StatelessWidget {
       builder: (context, snapshot) {
         //errors
         if (snapshot.hasError) {
-          return Text("Error");
+          return const Text("Error");
         }
         //loading ..
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Text("Loading");
+          return const Text("Loading");
         }
 
         //return list view
@@ -63,6 +66,7 @@ class HomePage extends StatelessWidget {
             MaterialPageRoute(
               builder: (context) => ChatPage(
                 receiverEmail: userData['email'],
+                receiverID: userData['uid'],
               ),
             ),
           );
